@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Alunos</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+
+<body class="container" >
+    
+    <h1 class="text-center">Alunos</h1>
+    
+    <div id="mensagemView"></div>
+    
+    <form class="form" style="border:0px solid black; width: 102%;padding: 10px;margin-top: 55px;background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
+            
+        <div class="form-group">
+            <label for="matricula">Matricula</label>
+            <input type="string" id="matricula" class="form-control" style="width: 200px;" required autofocus/>        
+        </div> 
+        
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="string" id="nome" class="form-control" style="width:600px;float:100px left100px;" required />        
+        </div> 
+
+        <div class="form-group" style="margin-top: -74px;margin-left: 650px;" >
+            <label for="data" >Data Nascimento</label>
+            <input type="date" id="data" class="form-control" style="margin-top: -0px;margin-left: 0px; width: 490px;" required />        
+        </div>  
+
+        <div class="form-group">
+            <label for="sexo">Sexo</label>
+            <br>
+            <label for="sexo">Feminino</label>
+        <mat-radio-button>
+            <input type="radio" id="sexo"  value="Feminino" value="Masculino" name="sexo" class="input" required /> 
+            
+            <label for="sexo">Masculino</label>
+            <input type="radio"  value="Masculino" name="sexo" class="input"  required /> 
+        </mat-radio-button>      
+        </div>
+
+        <div class="form-group" style="margin-top: -74px;margin-left: 200px; width: 400px;">
+            <label for="rg">RG</label>
+            <input type="string" id="rg" class="form-control"  max="10" required />        
+        </div> 
+
+        <div class="form-group" style="margin-top: -74px;margin-left: 650px; width: 490px;">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" class="form-control"  maxlength="11" required />        
+        </div> 
+
+        <div class="form-group" style="margin-top: -10px;margin-left: 0px; width: 600px;">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" class="form-control" required />        
+        </div> 
+
+        
+        <div class="form-group" style="margin-top: -74px;margin-left: 650px; width: 150px;">
+            <label for="numero">Numero</label>
+            <input type="number" min="1" step="1" id="numero" class="form-control" value="0" required/>
+        </div>
+
+        <div class="form-group" style="margin-top: -74px;margin-left: 830px; width: 310px;">
+            <label for="complemento">Complemento</label>
+            <input type="string" id="complemento" class="form-control" />        
+        </div> 
+        
+        <div class="form-group" style="margin-top: -10px;margin-left: 0px; width: 600px;">
+            <label for="cidade">Cidade</label>
+            <input type="string" id="cidade" class="form-control" required />        
+        </div> 
+
+        <div class="form-group" style="margin-top: -74px;margin-left: 650px; width: 490px;">
+            <label for="estado">Estado</label>
+            <input type="string" id="estado" class="form-control" required />        
+        </div> 
+        
+        <button class="btn btn-primary" type="submit">Salvar</button>
+    </form>
+
+    <br>
+    <br>
+
+    <div id="alunosView" style="border:0px solid black; width: 102%;padding: 10px;margin-top: 55px;background-color: rgba(0, 0, 0, 0.3); margin-top: -10px;border-radius: 10px;"></div>
+
+
+
+    
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mask.js"></script>
+    <script src="js/models/Aluno.js"></script>
+    <script src="js/models/Alunos.js"></script>
+    <script src="js/controllers/AlunoController.js"></script>
+    <script src="js/Valida/util.js"></script>
+    <script src="js/views/View.js"></script>
+    <script src="js/views/AlunosView.js"></script>
+    <script src="js/views/MensagemView.js"></script>
+    <script src="js/app.js"></script>
+
+    
+
+</body>
+<script>
+    $(document).ready(function () { 
+        var $seuCampoCpf = $('#cpf');
+        $seuCampoCpf.mask('000.000.000-00', {reverse: true});
+    });
+    $(document).ready(function () { 
+        var $seuCampoRg = $('#rg');
+        $seuCampoRg.mask('00.000.000', {reverse: true});
+    });
+    function myFunction() {
+    var x = document.getElementById("Masculino");
+    x.checked = true;
+    
+}
+
+</script>
+</html>
